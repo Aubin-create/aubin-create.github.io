@@ -966,5 +966,26 @@ formulaire.addEventListener('submit', (evenement) => {
 document.getElementById('anneeCourante').textContent = new Date().getFullYear();
 </script>
 
+<script>
+document.getElementById('formulaireContact').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const WEBHOOK = 'https://hook.eu1.make.com/40wchvsivooyo5sn9p4epbv5rs6j58zl';
+
+  const data = new URLSearchParams(new FormData(e.target));
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Envoi…';
+
+  try {
+    await fetch(WEBHOOK, { method: 'POST', body: data });
+    e.target.innerHTML = '<p style="font-size:1.1rem">✅ Merci ! Vous recevez une réponse dans les minutes qui suivent.</p>';
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Envoyer ma demande';
+    alert("Une erreur est survenue — appelez-nous directement.");
+  }
+});
+</script>
 </body>
 </html>
