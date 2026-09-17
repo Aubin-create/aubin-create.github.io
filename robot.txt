@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://agencementdelasee.fr/sitemap.xml
