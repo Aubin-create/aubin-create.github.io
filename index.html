@@ -12,6 +12,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
+<!-- ===== ANTI-ROBOT CLOUDFLARE TURNSTILE ===== -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <style>
 /* =========================================================
    0. TOKENS — couleurs, typo, espacements
@@ -432,6 +435,8 @@ noscript .reveal{ opacity:1; }
 .champ-consentement input{ margin-top:.25rem; width:18px; height:18px; accent-color: var(--rouge); flex:none; }
 .champ-consentement a{ color: var(--bleu); text-decoration: underline; }
 .champ-consentement.erreur label{ color: var(--rouge); }
+
+.cf-turnstile{ margin-bottom:1.2rem; min-height:65px; }
 
 .pot-de-miel{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 
@@ -924,7 +929,14 @@ noscript .reveal{ opacity:1; }
               <input type="text" id="site-web" name="site_web" tabindex="-1" autocomplete="off">
             </div>
 
+            <!-- Vérification anti-robot Cloudflare Turnstile -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAFjtsD1NFYKXWS7w" data-language="fr" data-theme="light"></div>
+
             <button type="submit" class="bouton bouton--plein">Envoyer ma demande</button>
+
+            <p class="erreur-envoi" id="erreurRobot" hidden role="alert">
+              Vérification anti-robot pas encore terminée. Patientez quelques secondes puis réessayez.
+            </p>
 
             <p class="erreur-envoi" id="erreurEnvoi" hidden role="alert">
               L'envoi a échoué. Merci de réessayer ou de nous appeler au
@@ -1047,7 +1059,7 @@ if (champDate){
 }
 
 // =========================================================
-// VALIDATION DU FORMULAIRE DE CONTACT (sans backend)
+// VALIDATION ET ENVOI DU FORMULAIRE DE CONTACT
 // =========================================================
 const formulaire = document.getElementById('formulaireContact');
 const confirmation = document.getElementById('confirmationEnvoi');
@@ -1064,12 +1076,15 @@ function validerChamp(champEl){
 formulaire.querySelectorAll('input, select, textarea').forEach(champEl => {
   champEl.addEventListener('blur', () => validerChamp(champEl));
   champEl.addEventListener('input', () => {
-    if (champEl.closest('.champ').classList.contains('erreur')) validerChamp(champEl);
+    const groupe = champEl.closest('.champ');
+    if (groupe && groupe.classList.contains('erreur')) validerChamp(champEl);
   });
 });
 
-// URL du webhook Make qui reçoit les demandes
-const WEBHOOK = 'https://hook.eu1.make.com/40wchvsivooyo5sn9p4epbv5rs6j58zl';
+// Le formulaire n'envoie plus directement à Make : il passe par le Worker Cloudflare,
+// qui vérifie Turnstile et les champs avant de transmettre à Make.
+const WORKER_URL = 'https://workeragencelentdelasee.v4thbcdt5n.workers.dev/';
+const erreurRobot = document.getElementById('erreurRobot');
 
 formulaire.addEventListener('submit', async (evenement) => {
   evenement.preventDefault();
@@ -1086,7 +1101,15 @@ formulaire.addEventListener('submit', async (evenement) => {
     return;
   }
 
-  // 2. Envoi
+  // 2. Turnstile doit avoir produit son jeton
+  const jeton = formulaire.querySelector('[name="cf-turnstile-response"]');
+  erreurRobot.hidden = true;
+  if (!jeton || !jeton.value){
+    erreurRobot.hidden = false;
+    return;
+  }
+
+  // 3. Envoi
   const bouton = formulaire.querySelector('button[type="submit"]');
   const libelleInitial = bouton.textContent;
   bouton.disabled = true;
@@ -1094,17 +1117,19 @@ formulaire.addEventListener('submit', async (evenement) => {
   erreurEnvoi.hidden = true;
 
   try {
-    const reponse = await fetch(WEBHOOK, {
+    const reponse = await fetch(WORKER_URL, {
       method: 'POST',
       body: new URLSearchParams(new FormData(formulaire))
     });
     if (!reponse.ok) throw new Error('Réponse ' + reponse.status);
 
-    // 3. Succès : on masque le formulaire et on affiche la confirmation
+    // 4. Succès : on masque le formulaire et on affiche la confirmation
     formulaire.style.display = 'none';
     confirmation.classList.add('visible');
     confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
   } catch (erreur) {
+    // Un jeton Turnstile ne sert qu'une fois : on en redemande un pour le prochain essai
+    if (window.turnstile) window.turnstile.reset();
     bouton.disabled = false;
     bouton.textContent = libelleInitial;
     erreurEnvoi.hidden = false;
