@@ -58,6 +58,15 @@ document.addEventListener('click', (e) => {
 });
 bureau.addEventListener('change', () => { fermerMenu(); basculerSousMenu(false); });
 
+// ---------- Bouton d'appel mobile : masqué tant que la photo d'accueil est à l'écran ----------
+const hero = document.querySelector('.hero');
+const appelFixe = document.querySelector('.appel-mobile');
+if (hero && appelFixe){
+  const majAppel = () => appelFixe.classList.toggle('sous-hero', hero.getBoundingClientRect().bottom > 0);
+  majAppel();
+  window.addEventListener('scroll', majAppel, { passive: true });
+}
+
 // ---------- Révélation au défilement ----------
 const aReveler = document.querySelectorAll('.reveal, .etapes');
 if ('IntersectionObserver' in window){
