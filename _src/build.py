@@ -328,7 +328,7 @@ def entete(page):
         {lien_nav("/contact/", "Contact", page, "contact")}
       </ul>
       <div class="nav-actions">
-        <a class="nav-tel" href="{TEL_LIEN}">{ICONE_TEL}<span>{TEL}</span></a>
+        <a class="nav-tel" href="{TEL_LIEN}" aria-label="Appeler le {TEL}">{ICONE_TEL}<span>{TEL}</span></a>
         <a class="bouton bouton--plein bouton--petit" href="/contact/">Demander un devis</a>
       </div>
     </nav>
