@@ -1,0 +1,146 @@
+{
+  "_aide": "Questions fréquentes, regroupées par catégorie. Elles sont affichées sur la page FAQ et reprises sur les pages métiers. Le HTML simple (<a>, <strong>) est autorisé dans les réponses.",
+  "categories": [
+    {
+      "id": "plafonds",
+      "titre": "Plafonds tendus Barrisol",
+      "questions": [
+        {
+          "id": "principe",
+          "q": "Qu'est-ce qu'un plafond tendu ?",
+          "r": "C'est une toile tendue sur des profilés fixés en périphérie de la pièce, à quelques centimètres sous le plafond existant. Une fois en tension, la toile forme une surface parfaitement plane, sans joint visible sur la plupart des pièces. Barrisol, la marque que nous posons, est un fabricant français de plafonds tendus."
+        },
+        {
+          "id": "duree",
+          "q": "Combien de temps faut-il pour poser un plafond tendu ?",
+          "r": "Pour une pièce standard, la pose se fait en une journée, sans gros travaux ni poussière de plâtre. La durée exacte dépend de la surface, de la forme du plafond et des options choisies (éclairage, découpes, plusieurs niveaux)."
+        },
+        {
+          "id": "plafond-abime",
+          "q": "Peut-on poser un plafond tendu sous un plafond abîmé ?",
+          "r": "Oui, c'est l'un de ses principaux intérêts : la toile se pose sous le plafond existant et masque fissures, traces et irrégularités, sans devoir le refaire. En cas d'infiltration ou d'humidité active, la cause doit être traitée avant la pose."
+        },
+        {
+          "id": "eclairage",
+          "q": "Peut-on intégrer de l'éclairage dans un plafond tendu ?",
+          "r": "Oui. Spots, suspensions ou rubans LED en périphérie sont prévus avant la pose : les supports sont fixés au plafond existant, puis la toile est découpée et renforcée à leur emplacement. Nous privilégions des éclairages LED, qui chauffent peu."
+        },
+        {
+          "id": "pieces-humides",
+          "q": "Un plafond tendu convient-il à une salle de bains ?",
+          "r": "Oui, les toiles PVC supportent les pièces humides comme la salle de bains ou la cuisine. La pièce doit simplement rester correctement ventilée, comme avec n'importe quel plafond."
+        },
+        {
+          "id": "hauteur",
+          "q": "Quelle hauteur sous plafond perd-on ?",
+          "r": "Quelques centimètres en général, le temps de fixer les profilés. Il faut prévoir davantage si des spots encastrés sont intégrés. La hauteur exacte est déterminée lors de la visite, selon votre plafond et votre projet d'éclairage."
+        },
+        {
+          "id": "entretien",
+          "q": "Comment entretenir un plafond tendu ?",
+          "r": "Un dépoussiérage de temps en temps suffit. Si besoin, un chiffon doux à peine humide, sans produit abrasif ni solvant. Évitez tout objet pointu ou tranchant au contact de la toile."
+        }
+      ]
+    },
+    {
+      "id": "sols",
+      "titre": "Sols souples PVC",
+      "questions": [
+        {
+          "id": "types",
+          "q": "Quels sols souples posez-vous ?",
+          "r": "Des revêtements de sol souples en PVC, avec un large choix de coloris et de motifs. Le produit est choisi ensemble au moment du devis, en fonction de la pièce et de l'usage."
+        },
+        {
+          "id": "support",
+          "q": "Peut-on poser un sol PVC sur un sol existant ?",
+          "r": "Souvent oui, à condition que le support soit sain, plan et sec. Selon son état, une préparation (ragréage, rebouchage) peut être nécessaire : nous le vérifions avant de chiffrer."
+        },
+        {
+          "id": "pieces",
+          "q": "Dans quelles pièces poser un sol souple ?",
+          "r": "Pièces de vie, chambres et pièces humides comme la salle de bains ou la cuisine. Le choix du produit dépend de l'usage de la pièce et du passage."
+        },
+        {
+          "id": "entretien-sol",
+          "q": "Comment entretenir un sol PVC ?",
+          "r": "Un balayage ou un aspirateur, puis une serpillière avec de l'eau et un détergent neutre. Évitez les produits abrasifs et protégez le dessous des pieds de meubles."
+        }
+      ]
+    },
+    {
+      "id": "menuiseries",
+      "titre": "Menuiseries intérieures",
+      "questions": [
+        {
+          "id": "prestations",
+          "q": "Quelles menuiseries intérieures posez-vous ?",
+          "r": "Des portes intérieures, des placards et des aménagements intérieurs. Chaque élément est ajusté à la pièce pour des finitions nettes."
+        },
+        {
+          "id": "combiner",
+          "q": "Peut-on prévoir la menuiserie en même temps que le plafond ?",
+          "r": "Oui. Si vous rénovez une pièce, nous pouvons organiser le plafond tendu, le sol et les menuiseries dans un même chantier, avec un seul devis."
+        }
+      ]
+    },
+    {
+      "id": "devis",
+      "titre": "Devis et déroulement des travaux",
+      "questions": [
+        {
+          "id": "obtenir",
+          "q": "Comment obtenir un devis ?",
+          "r": "Remplissez le <a href=\"/contact/\">formulaire de demande de devis</a> ou appelez le <a href=\"tel:+33681138787\">06 81 13 87 87</a>. Nous échangeons sur votre projet et, si besoin, planifions une visite avant de vous transmettre un devis détaillé."
+        },
+        {
+          "id": "gratuit",
+          "q": "Le devis est-il gratuit ?",
+          "r": "Oui, le devis est gratuit et sans engagement. Il précise les matériaux, la pose et les conditions d'intervention avant le début du chantier."
+        },
+        {
+          "id": "visite",
+          "q": "Faut-il une visite avant le devis ?",
+          "r": "Pour un chiffrage précis, une visite est souvent utile : elle permet de prendre les mesures, de vérifier l'état du plafond ou du sol et de discuter de l'éclairage. Pour une première estimation, des photos de la pièce envoyées par e-mail peuvent aider."
+        },
+        {
+          "id": "preparation",
+          "q": "Comment préparer la pièce avant l'intervention ?",
+          "r": "Nous vous indiquons au moment du devis ce qu'il faut prévoir selon les travaux : accès aux murs, meubles à déplacer, alimentation électrique pour les luminaires."
+        }
+      ]
+    },
+    {
+      "id": "zone",
+      "titre": "Zone d'intervention",
+      "questions": [
+        {
+          "id": "sud-manche",
+          "q": "Intervenez-vous uniquement dans le Sud Manche ?",
+          "r": "Nous intervenons principalement dans le Sud Manche, autour de Sourdeval, et plus largement en Normandie. Contactez-nous pour confirmer la faisabilité de votre projet selon votre commune."
+        },
+        {
+          "id": "communes",
+          "q": "Dans quelles communes intervenez-vous ?",
+          "r": "Notamment à Sourdeval, Mortain-Bocage, Saint-Hilaire-du-Harcouët, Brécey et Vire Normandie, ainsi que dans les communes alentour. Pour un projet plus éloigné, demandez-nous : chaque demande est étudiée."
+        }
+      ]
+    },
+    {
+      "id": "garanties",
+      "titre": "Délais, entretien et garanties",
+      "questions": [
+        {
+          "id": "delai",
+          "q": "Sous quel délai pouvez-vous intervenir ?",
+          "r": "Le délai dépend du planning en cours et de la disponibilité des matériaux, notamment pour les toiles imprimées. Il vous est indiqué au moment du devis."
+        },
+        {
+          "id": "garantie",
+          "q": "Vos travaux sont-ils garantis ?",
+          "r": "Comme tout artisan du bâtiment, nous appliquons les garanties légales en vigueur selon la nature des travaux réalisés. Le détail applicable à votre chantier vous est précisé sur le devis."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+---
+titre: Contact et devis gratuit — plafond tendu Sud Manche | Agencement de la Sée
+og_titre: Demander un devis — Agencement de la Sée
+description: Demandez un devis gratuit pour votre plafond tendu Barrisol, sol souple PVC ou menuiserie intérieure. Agencement de la Sée, Sourdeval (50) — 06 81 13 87 87.
+chemin: /contact/
+nav: contact
+ariane: Contact
+schema: entreprise
+formulaire: oui
+---
+<section class="page-tete">
+  <div class="conteneur">
+    {{ariane}}
+    <p class="surtitre">Contact et devis</p>
+    <h1 class="titre-l">Parlons de votre projet</h1>
+    <p class="chapo">Devis gratuit et sans engagement. Décrivez votre pièce et vos envies : nous vous recontactons pour en parler et, si besoin, venir sur place.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="conteneur contact-grille">
+    <div class="contact-infos">
+      <div class="info">
+        <span class="info-icone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.95.33 1.88.6 2.78a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.27 1.83.47 2.78.6A2 2 0 0 1 22 16.92z"/></svg></span>
+        <div><strong>Téléphone</strong><a href="tel:+33681138787">06 81 13 87 87</a></div>
+      </div>
+      <div class="info">
+        <span class="info-icone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg></span>
+        <div><strong>E-mail</strong><a href="mailto:agencementdelasee@gmail.com">agencementdelasee@gmail.com</a></div>
+      </div>
+      <div class="info">
+        <span class="info-icone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><strong>Adresse</strong><p>La Gare - Sourdeval<br>50150 Sourdeval</p></div>
+      </div>
+      <div class="info">
+        <span class="info-icone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <div><strong>Horaires</strong><p>Lundi – vendredi : 9h–12h / 14h–18h<br>Samedi : sur rendez-vous</p></div>
+      </div>
+      <div class="info">
+        <span class="info-icone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/><circle cx="12" cy="12" r="9"/></svg></span>
+        <div><strong>Zone d'intervention</strong><p>Sud Manche et Normandie</p></div>
+      </div>
+    </div>
+
+    <div>
+      <form class="formulaire" id="formulaireContact" novalidate>
+        <h2>Demande de devis</h2>
+        <p class="texte-doux">Tous les champs sont obligatoires, sauf mention contraire.</p>
+
+        <div class="champ">
+          <label for="nom">Nom complet</label>
+          <input type="text" id="nom" name="nom" required minlength="2" autocomplete="name" aria-describedby="erreur-nom">
+          <p class="erreur-msg" id="erreur-nom">Merci d'indiquer votre nom (2 caractères minimum).</p>
+        </div>
+
+        <div class="ligne-2">
+          <div class="champ">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="erreur-email">
+            <p class="erreur-msg" id="erreur-email">Merci d'indiquer une adresse e-mail valide.</p>
+          </div>
+          <div class="champ">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" required pattern="^0[1-9]([ .\-]?[0-9]{2}){4}$" placeholder="06 12 34 56 78" autocomplete="tel" aria-describedby="erreur-telephone">
+            <p class="erreur-msg" id="erreur-telephone">Format attendu : 06 12 34 56 78.</p>
+          </div>
+        </div>
+
+        <div class="ligne-2">
+          <div class="champ">
+            <label for="sujet">Prestation concernée</label>
+            <select id="sujet" name="sujet" required aria-describedby="erreur-sujet">
+              <option value="" selected disabled>Choisissez…</option>
+              <option>Devis plafond tendu Barrisol</option>
+              <option>Devis sol souple PVC</option>
+              <option>Devis menuiserie intérieure</option>
+              <option>Question générale</option>
+              <option>SAV / Garantie</option>
+              <option>Autre demande</option>
+            </select>
+            <p class="erreur-msg" id="erreur-sujet">Merci de choisir la prestation concernée.</p>
+          </div>
+          <div class="champ">
+            <label for="date">Date souhaitée <span class="facultatif">(facultatif)</span></label>
+            <input type="date" id="date" name="date">
+          </div>
+        </div>
+
+        <div class="champ">
+          <label for="message">Votre projet</label>
+          <textarea id="message" name="message" required minlength="10" placeholder="Type de pièce, surface approximative, finition ou éclairage envisagés, commune…" aria-describedby="erreur-message"></textarea>
+          <p class="erreur-msg" id="erreur-message">Merci de décrire votre projet (10 caractères minimum).</p>
+        </div>
+
+        <div class="champ champ-consentement">
+          <label for="consentement">
+            <input type="checkbox" id="consentement" name="consentement" required aria-describedby="erreur-consentement">
+            <span>J'accepte que mes informations soient utilisées pour répondre à ma demande.
+            <a href="/politique-de-confidentialite/">En savoir plus</a>.</span>
+          </label>
+          <p class="erreur-msg" id="erreur-consentement">Merci de cocher cette case pour envoyer votre demande.</p>
+        </div>
+
+        <!-- Champ anti-robot : invisible pour les humains, rempli par les robots -->
+        <div class="pot-de-miel" aria-hidden="true">
+          <label for="site-web">Ne remplissez pas ce champ</label>
+          <input type="text" id="site-web" name="site_web" tabindex="-1" autocomplete="off">
+        </div>
+
+        <!-- Vérification anti-robot Cloudflare Turnstile -->
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAFjtsD1NFYKXWS7w" data-language="fr" data-theme="light"></div>
+
+        <button type="submit" class="bouton bouton--plein">Envoyer ma demande</button>
+
+        <p class="erreur-envoi" id="erreurRobot" hidden role="alert">
+          Vérification anti-robot pas encore terminée. Patientez quelques secondes puis réessayez.
+        </p>
+        <p class="erreur-envoi" id="erreurEnvoi" hidden role="alert">
+          L'envoi a échoué. Merci de réessayer ou de nous appeler au <a href="tel:+33681138787">06 81 13 87 87</a>.
+        </p>
+
+        <p class="mention-rgpd">Vos informations servent uniquement à traiter votre demande. Elles transitent par Cloudflare, Make et Google pour leur acheminement. Détails et droits : <a href="/politique-de-confidentialite/">politique de confidentialité</a>.</p>
+      </form>
+      <p class="texte-doux" style="margin-top:1.2rem;font-size:.92rem">Vous avez des photos de la pièce ? Envoyez-les à <a class="lien" href="mailto:agencementdelasee@gmail.com">agencementdelasee@gmail.com</a> après votre demande : elles nous aident à préparer le devis.</p>
+    </div>
+  </div>
+</section>

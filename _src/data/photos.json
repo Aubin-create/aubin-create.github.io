@@ -1,0 +1,77 @@
+{
+  "_aide": "Registre de toutes les photos du site. Pour ajouter une photo : passez-la dans Squoosh (WebP, qualité ~75, largeur indiquée), nommez-la <identifiant>.webp et déposez-la dans images/photos/. Elle remplace automatiquement l'emplacement « Photo à venir ». Relancez ensuite « python _src/build.py » pour l'inscrire définitivement dans le HTML.",
+
+  "plafond-imprime-boutique": {
+    "source": "images/realisations/3.jpg",
+    "alt": "Plafond tendu Barrisol imprimé d'un motif marbré bleu et or, posé en voûte au-dessus du comptoir d'une boutique",
+    "largeur": 1179, "hauteur": 881
+  },
+  "plafond-blanc-eclairage-led": {
+    "source": "images/realisations/2.jpg",
+    "alt": "Plafond tendu blanc mat avec éclairage LED indirect sur tout le pourtour de la pièce",
+    "largeur": 1050, "hauteur": 1400
+  },
+  "toile-translucide-verriere": {
+    "source": "images/realisations/1.jpg",
+    "alt": "Toile tendue translucide installée sous une verrière, fixée par laçage sur tout le pourtour",
+    "largeur": 1050, "hauteur": 1400
+  },
+
+  "hero-accueil": {
+    "alt": "Plafond tendu Barrisol dans un intérieur rénové",
+    "largeur": 2400, "hauteur": 1500,
+    "repli": "plafond-imprime-boutique",
+    "consigne": "Grande photo horizontale pour le haut de la page d'accueil (idéalement 2400 px de large). Tant qu'elle est absente, la photo du plafond imprimé est utilisée."
+  },
+  "plafond-salon": {
+    "alt": "Plafond tendu posé dans un salon",
+    "largeur": 1600, "hauteur": 1200,
+    "consigne": "Plafond tendu dans un salon ou une pièce de vie, photo horizontale."
+  },
+  "plafond-cuisine": {
+    "alt": "Plafond tendu posé dans une cuisine",
+    "largeur": 1600, "hauteur": 1200,
+    "consigne": "Plafond tendu dans une cuisine, photo horizontale."
+  },
+  "plafond-salle-de-bains": {
+    "alt": "Plafond tendu posé dans une salle de bains",
+    "largeur": 1600, "hauteur": 1200,
+    "consigne": "Plafond tendu dans une salle de bains, photo horizontale."
+  },
+  "plafond-pose-chantier": {
+    "alt": "Pose d'un plafond tendu Barrisol en cours de chantier",
+    "largeur": 1200, "hauteur": 1500,
+    "repli": "toile-translucide-verriere",
+    "consigne": "Photo verticale prise pendant une pose (profilés, mise en tension de la toile). Utilisée à côté des étapes d'un projet."
+  },
+  "sol-pvc-piece-de-vie": {
+    "alt": "Sol souple PVC posé dans une pièce de vie",
+    "largeur": 1600, "hauteur": 1200,
+    "consigne": "Sol souple PVC dans une pièce de vie, photo horizontale."
+  },
+  "sol-pvc-chambre": {
+    "alt": "Sol souple PVC posé dans une chambre",
+    "largeur": 1600, "hauteur": 1200,
+    "consigne": "Sol souple PVC dans une chambre, photo horizontale."
+  },
+  "sol-pvc-detail": {
+    "alt": "Détail de finition d'un sol souple PVC en bordure de mur",
+    "largeur": 1600, "hauteur": 1200,
+    "consigne": "Gros plan d'une finition (plinthe, seuil, raccord) sur un sol souple."
+  },
+  "menuiserie-porte-interieure": {
+    "alt": "Porte intérieure posée par Agencement de la Sée",
+    "largeur": 1200, "hauteur": 1600,
+    "consigne": "Porte intérieure posée, photo verticale."
+  },
+  "menuiserie-placard": {
+    "alt": "Placard intérieur posé par Agencement de la Sée",
+    "largeur": 1200, "hauteur": 1600,
+    "consigne": "Placard ou aménagement intérieur posé, photo verticale."
+  },
+  "a-propos-gerant": {
+    "alt": "Jérôme Leprovost, gérant d'Agencement de la Sée, sur un chantier",
+    "largeur": 1200, "hauteur": 1500,
+    "consigne": "Portrait du gérant ou de l'équipe sur un chantier, photo verticale."
+  }
+}
