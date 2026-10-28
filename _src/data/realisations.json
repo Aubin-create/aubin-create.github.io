@@ -1,0 +1,33 @@
+{
+  "_aide": "Galerie des réalisations. Chaque entrée renvoie à une photo de _src/data/photos.json. Catégories possibles : plafonds, sols, menuiseries. « taille » (facultatif) : large ou haute, pour varier la composition. Une entrée dont la photo n'existe pas encore reste invisible pour les visiteurs.",
+  "realisations": [
+    {
+      "photo": "plafond-imprime-boutique",
+      "categorie": "plafonds",
+      "titre": "Plafond imprimé dans une boutique",
+      "description": "Toile Barrisol imprimée d'un motif marbré bleu et or, posée en voûte au-dessus du comptoir.",
+      "taille": "large"
+    },
+    {
+      "photo": "toile-translucide-verriere",
+      "categorie": "plafonds",
+      "titre": "Toile translucide sous verrière",
+      "description": "La toile diffuse la lumière naturelle et masque la structure de la verrière. Fixation par laçage périphérique.",
+      "taille": "haute"
+    },
+    {
+      "photo": "plafond-blanc-eclairage-led",
+      "categorie": "plafonds",
+      "titre": "Blanc mat et éclairage indirect",
+      "description": "Toile blanche mate, ruban LED sur tout le pourtour et points de suspension prévus avant la pose.",
+      "taille": "haute"
+    },
+    { "photo": "plafond-salon", "categorie": "plafonds", "titre": "Plafond tendu — salon", "description": "" },
+    { "photo": "plafond-cuisine", "categorie": "plafonds", "titre": "Plafond tendu — cuisine", "description": "" },
+    { "photo": "plafond-salle-de-bains", "categorie": "plafonds", "titre": "Plafond tendu — salle de bains", "description": "" },
+    { "photo": "sol-pvc-piece-de-vie", "categorie": "sols", "titre": "Sol souple PVC — pièce de vie", "description": "" },
+    { "photo": "sol-pvc-chambre", "categorie": "sols", "titre": "Sol souple PVC — chambre", "description": "" },
+    { "photo": "menuiserie-porte-interieure", "categorie": "menuiseries", "titre": "Porte intérieure", "description": "" },
+    { "photo": "menuiserie-placard", "categorie": "menuiseries", "titre": "Placard intérieur", "description": "" }
+  ]
+}

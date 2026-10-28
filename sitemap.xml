@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://agencementdelasee.fr/</loc><priority>1.0</priority></url>
-  <url><loc>https://agencementdelasee.fr/mentions-legales.html</loc><priority>0.3</priority></url>
-  <url><loc>https://agencementdelasee.fr/confidentialite.html</loc><priority>0.3</priority></url>
+  <url><loc>https://agencementdelasee.fr/a-propos/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://agencementdelasee.fr/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://agencementdelasee.fr/contact/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://agencementdelasee.fr/faq/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://agencementdelasee.fr/menuiseries-interieures/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://agencementdelasee.fr/plafonds-tendus-barrisol/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://agencementdelasee.fr/realisations/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://agencementdelasee.fr/sols-pvc/</loc><lastmod>2026-10-28</lastmod></url>
 </urlset>
