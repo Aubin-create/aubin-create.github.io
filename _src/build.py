@@ -483,11 +483,17 @@ def assembler(page):
                  if page.get("formulaire") == "oui" else "")
     script_contact = (f'<script src="{version("/assets/js/contact.js")}" defer></script>\n'
                       if page.get("formulaire") == "oui" else "")
+    # Préchargement de l'image principale : mêmes src/srcset/sizes que la balise <img>,
+    # sinon le navigateur télécharge deux versions de la photo.
     precharge = ""
-    if page.get("precharge"):
-        reel = resoudre(page["precharge"])
-        if reel:
-            precharge = f'<link rel="preload" as="image" href="/images/photos/{reel}.webp" fetchpriority="high">\n'
+    prioritaire = re.search(r'<img[^>]*fetchpriority="high"[^>]*>', corps)
+    if prioritaire:
+        attrs = dict(re.findall(r'(src|srcset|sizes)="([^"]*)"', prioritaire.group(0)))
+        jeu = (f' imagesrcset="{attrs["srcset"]}" imagesizes="{attrs["sizes"]}"' if "srcset" in attrs else "")
+        precharge = f'<link rel="preload" as="image" href="{attrs["src"]}"{jeu} fetchpriority="high">\n'
+    css = (RACINE / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    css = re.sub(r"\s*\n\s*", "\n", css).strip()
     return f'''<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -510,10 +516,11 @@ def assembler(page):
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Plafond tendu Barrisol imprimé posé par Agencement de la Sée">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-{precharge}<link rel="stylesheet" href="{version("/assets/css/site.css")}">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/work-sans-latin.woff2" crossorigin>
+{precharge}<style>
+{css}
+</style>
 <script>document.documentElement.classList.add('js');</script>
 <script src="{version("/assets/js/site.js")}" defer></script>
 {script_contact}{turnstile}{donnees_structurees(page)}

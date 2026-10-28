@@ -2,6 +2,16 @@
    Agencement de la Sée — feuille de style commune
    ========================================================= */
 
+/* ---------- Polices hébergées sur le site (licence SIL Open Font License) ---------- */
+@font-face{
+  font-family:'Space Grotesk'; font-style:normal; font-weight:500 700; font-display:swap;
+  src:url(/assets/fonts/space-grotesk-latin.woff2) format('woff2');
+}
+@font-face{
+  font-family:'Work Sans'; font-style:normal; font-weight:400 600; font-display:swap;
+  src:url(/assets/fonts/work-sans-latin.woff2) format('woff2');
+}
+
 /* ---------- 0. Jetons : couleurs de la marque (logo) ---------- */
 :root{
   --rouge:        #E2001A;
