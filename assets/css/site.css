@@ -126,8 +126,13 @@ button{ font:inherit; color:inherit; cursor:pointer; }
   transition:background .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 .entete.defile{ border-color:var(--bordure); box-shadow:0 6px 24px rgba(20,22,31,.06); }
-@supports (backdrop-filter: blur(8px)){ .entete{ background:rgba(255,255,255,.88); backdrop-filter:blur(10px) saturate(1.4); } }
-.entete-barre{ height:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+/* Le flou est porté par un pseudo-élément : appliqué à .entete, il piégerait
+   le panneau du menu mobile (position:fixed) dans la hauteur de l'en-tête. */
+@supports (backdrop-filter: blur(8px)){
+  .entete{ background:transparent; }
+  .entete::before{ content:""; position:absolute; inset:0; z-index:-1; background:rgba(255,255,255,.88); backdrop-filter:blur(10px) saturate(1.4); }
+}
+.entete-barre{ max-width:1440px; height:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
 .marque{ display:flex; align-items:center; gap:.75rem; text-decoration:none; flex-shrink:0; }
 .marque img{ height:48px; width:auto; }
 .marque-texte{ display:flex; flex-direction:column; line-height:1.1; }
@@ -203,8 +208,20 @@ button{ font:inherit; color:inherit; cursor:pointer; }
   .sous-menu li:first-child strong{ color:var(--rouge); }
   .nav-actions{ display:flex; align-items:center; gap:1.3rem; }
   .nav-tel span{ display:none; }
+  .nav-tel{ width:44px; height:44px; justify-content:center; border-radius:50%; border:1px solid var(--bordure); }
 }
-@media (min-width: 1280px){ .nav-tel span{ display:inline; } }
+/* Écrans moyens (ou ordinateur avec zoom Windows) : en-tête resserré */
+@media (min-width: 1080px) and (max-width: 1279px){
+  .marque-texte span{ display:none; }
+  .nav{ gap:1.2rem; }
+  .nav-liste{ gap:1.15rem; }
+  .nav-liste > li > a, .nav-deroulant-bouton{ font-size:.92rem; }
+  .nav-actions{ gap:.8rem; }
+}
+@media (min-width: 1440px){
+  .nav-tel{ width:auto; height:auto; border:0; border-radius:0; }
+  .nav-tel span{ display:inline; }
+}
 
 /* ---------- 7. Hero d'accueil ---------- */
 .hero{
