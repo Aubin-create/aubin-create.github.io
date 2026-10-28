@@ -625,7 +625,7 @@ button{ font:inherit; color:inherit; cursor:pointer; }
   background:var(--rouge); color:#fff; font-weight:600; text-decoration:none; box-shadow:var(--ombre-m);
   transition:transform .3s var(--transition), opacity .3s;
 }
-.appel-mobile.masque{ transform:translateY(140%); opacity:0; pointer-events:none; }
+.appel-mobile.masque, .appel-mobile.sous-hero{ transform:translateY(140%); opacity:0; pointer-events:none; }
 @media (max-width: 767px){ .pied{ padding-bottom:7rem; } }
 @media (min-width: 768px){ .appel-mobile{ display:none; } }
 
